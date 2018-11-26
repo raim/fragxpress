@@ -65,7 +65,7 @@ read_aati <- function(path=getwd(), pattern='.*.Electropherogram.csv$',
 plot_efg <- function(fgs, sample, xlim=c(1,2.5e3), ylim=c(0,1.1),
                      norm.range=c(10,5000),
                      xlab="fragment size, bp", ylab="norm. signal",
-                     main, main.line=-2, ...) {
+                     main, main.line=-2, legpos, ...) {
 
     ## replicates
     reps <- unique(fgs$rep[fgs$sample==sample])
@@ -83,5 +83,6 @@ plot_efg <- function(fgs, sample, xlim=c(1,2.5e3), ylim=c(0,1.1),
         lines(fgs[idx,1], fgs[idx,2]/max(fgs[midx,2]),col=i)
         
     }
-    legend("topright", legend=dates, col=1:length(reps), lty=1)
+    if ( !missing(legpos) )
+        legend(legpos, legend=dates, col=1:length(reps), lty=1)
 }
