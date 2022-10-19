@@ -1,4 +1,4 @@
-# fragxpress - analyzing nuclei acid electropherograms
+# fragxpress - analyzing nucleic acid electropherograms
 
 * Goals: 
     - follow the processing steps during generation of an NGS library
